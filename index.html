@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bendito Café</title>
+    <link rel="stylesheet" href="/CSS/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="contenedor nav-bar">
+           <section class="hamburguesa">
+                <input type="checkbox" id="menu-hamb">
+                <label for="menu-hamb" class="menu-icon">&#9776;</label>
+
+                <nav class="menu-slide" id="menu-slide">
+                    <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#encuesta">Reservas</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    </ul>
+                </nav>
+            </section>
+
+              <nav>
+                <div id="icono">
+                    <a><img src="/imagenes/Logo1.png"></a>
+                </div>
+             </nav>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#encuesta">Reservas</a></li>
+            </ul>
+        </div>
+    </header>
+    <h1></h1>
+     <audio id="miAudio" src="/imagenes/12-ambiente-cafeteria-33701.mp3"></audio>
+    <main>
+        <section id="Inicio">
+           
+        </section>
+        <Section id="nosotros">
+            <h2>SOBRE NOSOTROS</h2>
+            <p>Somos un lugar mágico con productos hechos con amor y artesanales delicioso café tortas</p>
+        </Section>
+
+        <section class="gallery" id="productos">
+            <h1 class="titulo">CATEGORÍAS DE PRODUCTOS</h1>
+            <div class="grid">
+                <div class="cont_img">
+                    <div class="efecto">
+                        <img src="https://canaltrece.com.co/wp-content/uploads/2024/03/Panaderia-pan-colombia.jpg" alt="categoria panaderia">
+                    </div>
+                    <button class="Cartaprodu">PANADERÍA</button>
+                </div>
+                <div class="cont_img">
+                    <div class="efecto">
+                        <img src="imagenes/cafes.jpg" alt="categoria cafés">
+                    </div>
+                    <button class="Cartaprodu">BEBIDAS</button>
+                </div>
+                <div class="cont_img">
+                    <div class="efecto">
+                        <img src="imagenes/postres.jpg" alt="categoria postres">
+                    </div>
+                    <button class="Cartaprodu">POSTRES</button>
+                </div>
+                 <div class="cont_img">
+                    <div class="efecto">
+                        <img src="" alt="categoria postres">
+                    </div>
+                    <button class="Cartaprodu">ANTOJOS</button>
+                </div>
+                 <div class="cont_img">
+                    <div class="efecto">
+                        <img src="" alt="categoria postres">
+                    </div>
+                    <button class="Cartaprodu">OTRA</button>
+                </div>
+              
+                </div>
+            </div>
+        </section>
+        <section class="formulario">
+            <h1 id="encuesta">Reservas</h1>
+            <form>
+                <div>
+                    <section class="campo">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
+                    </section>
+                
+                    <section class="campo">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
+                    </section>
+
+                    <section class="campo">
+                        <label for="Teléfono">Teléfono:</label>
+                        <input type="number" id="telefono" name="telefono" placeholder="Teléfono fijo o celular" required>
+                    </section>
+                    <br>¡Qué esperas....Reserva ya!<br>
+                    </section>
+
+                    <button type="submit">Enviar</button>
+                    <div id="mensaje"></div>
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-content">
+            <p> &copy; 2025 EnCri. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="/JavaScript/main_form.js"></script>
+    <script src="/JavaScript/main_img.js"></script>
+     <script src="/JavaScript/main_menudes.js"></script>
+     <button id="activarSonido" style="display: none;">Activar sonido</button>
+
+</body>
+
+</html>
