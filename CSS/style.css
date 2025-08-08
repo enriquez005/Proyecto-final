@@ -1,0 +1,406 @@
+body {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    background-image: url(/imagenes/515491193_24475236385407755_3108792774610342801_n.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:center;
+}
+
+#menu-hamb {
+    display: none;
+}
+
+.menu-icon {
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 15px;
+    display: inline-block;
+    z-index: 1001;
+    position: relative;
+}
+
+.menu-slide {
+    position: fixed;
+    top: 160px;
+    left: -250px;
+    width: 140px;
+    height: 100%;
+    background-color: rgba(243, 239, 183, 0.2);
+    color: rgb(0, 0, 0);
+    transition: left 0.8s ease;
+    z-index: 1000;
+    padding-top: 60px;
+}
+
+#menu-hamb:checked ~ .menu-slide {
+    left: 0;
+}
+
+.menu-slide ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-slide li a {
+    display: block;
+    padding: 15px 20px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    border-bottom: 1px solid #e4e7c7;
+}
+
+.menu-slide li a:hover {
+    background-color: #e6eba2;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items:flex-end;
+    background-color: #e9e6cd;
+    padding: 15px 30px;
+    box-shadow: 0 4px 6px rgba(156, 87, 87, 0.9);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    margin: 2px;
+    padding: 0;
+    border: 2px;
+    border-color: #111;
+}
+
+.nav-links a {
+    color: rgb(58, 53, 53);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #aeaf89b6;
+}
+
+.item {
+    color: rgb(255, 0, 0);
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 5px;
+}
+
+main {
+    display: flexbox;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+#nosotros {
+    display: grid;
+    background-color: #d3cb96;
+    text-shadow: #111;
+    color: #332d33;
+    font-size: large;
+}
+
+.gallery {
+    flex: 2;
+}
+
+.titulo {
+    color: rgb(233, 214, 12);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    justify-items: center;
+    grid-auto-rows: auto;
+}
+
+.grid img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 10px;
+}
+
+.grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgb(46, 46, 40);
+}
+
+.formulario {
+    background-color: #ffffffcc;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    color: #000000;
+}
+
+.formulario h1 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.campo {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.campo input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.formulario p {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* ✅ BOTÓN corregido */
+button[type="submit"] {
+    background-color: #6c4f3d;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 20px auto 0;
+    width: auto;
+    min-width: 150px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+button[type="submit"]:hover {
+    background-color: #533b2c;
+    transform: scale(1.05);
+}
+
+#mensaje {
+    margin-top: 15px;
+    text-align: center;
+    color: rgb(152, 23, 23);
+}
+
+/* ⛔ Ajuste: ya no se aplica a todos los botones */
+input {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 8px;
+}
+
+#titulo {
+    color: white;
+}
+
+.cont_img {
+    background-color: #ffffffcc;
+    padding: 16px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.cont_img:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+#icono img {
+    height: 200px;
+    width: fit-content;
+    object-fit: contain;
+    justify-content: center;
+}
+
+.efecto img {
+    filter: blur(2px);
+}
+
+.efecto img:hover {
+    filter: brightness(1);
+    transform: scale(1.1);
+}
+
+.footer {
+    background-color: #747152;
+    color: #fff;
+    padding: 20px 30px;
+    margin-top: 40px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer p {
+    margin: 0 0 10px;
+    font-size: 0.95rem;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #00aaff;
+}
+
+.especificaciones {
+    margin-top: 10px;
+    background-color: #f9f9f9;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.5rem;
+}
+
+/* 📱 Responsivo */
+@media (max-width: 768px) {
+    .nav-bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .gallery {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .grid, .formulario {
+        flex: 1 1 100%;
+    }
+
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    }
+
+    .icono img {
+        height: 40px;
+    }
+
+    .formulario input,
+    .formulario button {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .formulario {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* ========== ESTILOS PARA RESERVAS WHATSAPP ========== */
+
+/* Estilos para el select y textarea */
+.campo select,
+.campo textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: 14px;
+    resize: vertical; /* Solo para textarea */
+}
+
+.campo select:focus,
+.campo textarea:focus,
+.campo input:focus {
+    outline: none;
+    border-color: #6c4f3d;
+    box-shadow: 0 0 5px rgba(108, 79, 61, 0.3);
+}
+
+/* Estilo para el mensaje de éxito */
+.mensaje-exito {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #c3e6cb;
+    margin-top: 15px;
+    text-align: center;
+}
+
+/* Estilo para el mensaje de error */
+.mensaje-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #f5c6cb;
+    margin-top: 15px;
+    text-align: center;
+}
+
+/* Responsive para los nuevos campos */
+@media (max-width: 768px) {
+    .campo select,
+    .campo textarea {
+        font-size: 16px; /* Evita zoom en móviles */
+    }
+}
