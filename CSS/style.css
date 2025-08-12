@@ -125,7 +125,7 @@ main {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 40px;
     justify-items: center;
     grid-auto-rows: auto;
@@ -349,5 +349,58 @@ input {
     .footer-links {
         flex-direction: column;
         gap: 10px;
+    }
+}
+
+/* ========== ESTILOS PARA RESERVAS WHATSAPP ========== */
+
+/* Estilos para el select y textarea */
+.campo select,
+.campo textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: 14px;
+    resize: vertical; /* Solo para textarea */
+}
+
+.campo select:focus,
+.campo textarea:focus,
+.campo input:focus {
+    outline: none;
+    border-color: #6c4f3d;
+    box-shadow: 0 0 5px rgba(108, 79, 61, 0.3);
+}
+
+/* Estilo para el mensaje de éxito */
+.mensaje-exito {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #c3e6cb;
+    margin-top: 15px;
+    text-align: center;
+}
+
+/* Estilo para el mensaje de error */
+.mensaje-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #f5c6cb;
+    margin-top: 15px;
+    text-align: center;
+}
+
+/* Responsive para los nuevos campos */
+@media (max-width: 768px) {
+    .campo select,
+    .campo textarea {
+        font-size: 16px; /* Evita zoom en móviles */
     }
 }

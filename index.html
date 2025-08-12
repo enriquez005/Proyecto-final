@@ -72,15 +72,9 @@
                 </div>
                  <div class="cont_img">
                     <div class="efecto">
-                        <img src="" alt="categoria postres">
+                        <img src="/imagenes/img1.jpg" alt="categoria postres">
                     </div>
                     <button class="Cartaprodu">ANTOJOS</button>
-                </div>
-                 <div class="cont_img">
-                    <div class="efecto">
-                        <img src="" alt="categoria postres">
-                    </div>
-                    <button class="Cartaprodu">OTRA</button>
                 </div>
               
                 </div>
@@ -88,27 +82,61 @@
         </section>
         <section class="formulario">
             <h1 id="encuesta">Reservas</h1>
-            <form>
-                <div>
-                    <section class="campo">
-                        <label for="nombre">Nombre:</label>
-                        <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
-                    </section>
-                
-                    <section class="campo">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
-                    </section>
+            <!-- CAMBIAR EL NÚMERO 573137348104 por el número real del propietario -->
+            <form id="reservaForm" data-whatsapp="573137348104">
+            <div>
+                <section class="campo">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
+                </section>
+        
+                <section class="campo">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
+                </section>
 
-                    <section class="campo">
-                        <label for="Teléfono">Teléfono:</label>
-                        <input type="number" id="telefono" name="telefono" placeholder="Teléfono fijo o celular" required>
-                    </section>
-                    <br>¡Qué esperas....Reserva ya!<br>
-                    </section>
+                <section class="campo">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="number" id="telefono" name="telefono" placeholder="Teléfono fijo o celular" required>
+                </section>
 
-                    <button type="submit">Enviar</button>
-                    <div id="mensaje"></div>
+                <!-- CAMPOS NUEVOS PARA LA RESERVA -->
+                <section class="campo">
+                    <label for="fecha">Fecha de reserva:</label>
+                    <input type="date" id="fecha" name="fecha" required>
+                </section>
+
+                <section class="campo">
+                    <label for="hora">Hora de reserva:</label>
+                    <input type="time" id="hora" name="hora" required>
+                </section>
+
+                <section class="campo">
+                    <label for="personas">Número de personas:</label>
+                        <select id="personas" name="personas" required>
+                            <option value="">Selecciona...</option>
+                            <option value="1">1 persona</option>
+                            <option value="2">2 personas</option>
+                            <option value="3">3 personas</option>
+                            <option value="4">4 personas</option>
+                            <option value="5">5 personas</option>
+                            <option value="6">6+ personas</option>
+                        </select>
+                </section>
+
+            <section class="campo">
+                <label for="comentarios">Comentarios adicionales (opcional):</label>
+                <textarea id="comentarios" name="comentarios" placeholder="Alguna solicitud especial..." rows="3"></textarea>
+                </section>
+
+                 <br>¡Qué esperas....Reserva ya!<br>
+             </div>
+
+            <button type="submit">Enviar Reserva</button>
+            <div id="mensaje"></div>
+            </form>
+                </section>
+
                 </div>
             </form>
         </section>
@@ -120,8 +148,8 @@
     </footer>
     <script src="/JavaScript/main_form.js"></script>
     <script src="/JavaScript/main_img.js"></script>
-     <script src="/JavaScript/main_menudes.js"></script>
-     <button id="activarSonido" style="display: none;">Activar sonido</button>
+    <script src="/JavaScript/main_menudes.js"></script>
+    <button id="activarSonido" style="display: none;">Activar sonido</button>
 
 </body>
 
