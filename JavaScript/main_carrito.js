@@ -256,6 +256,21 @@ function procesarPedido(e) {
     const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
     window.open(url, '_blank');
     
+// 📋 INTEGRACIÓN CON VISOR: Guardar pedido en localStorage
+const pedidoParaVisor = {
+    cliente: datosCliente,
+    productos: carrito.map(item => ({
+        nombre: item.nombre,
+        precio: item.precio,
+        cantidad: item.cantidad
+    })),
+    total: total,
+    observaciones: datosCliente.observaciones
+};
+
+// Guardar en localStorage para el visor
+guardarPedidoEnVisor(pedidoParaVisor);
+
     // Limpiar carrito y cerrar modal
     carrito = [];
     actualizarCarrito();
@@ -354,3 +369,38 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// ========== INTEGRACIÓN CON VISOR DE PEDIDOS ==========
+function guardarPedidoEnVisor(pedido) {
+    try {
+        // Obtener pedidos existentes
+        let pedidosExistentes = [];
+        const pedidosGuardados = localStorage.getItem("benditoCafePedidos");
+        
+        if (pedidosGuardados) {
+            pedidosExistentes = JSON.parse(pedidosGuardados);
+        }
+        
+        // Crear nuevo pedido con ID único
+        const nuevoPedido = {
+            id: Date.now().toString(36) + Math.random().toString(36).substr(2),
+            fecha: new Date().toISOString(),
+            estado: "pendiente",
+            cliente: pedido.cliente,
+            productos: pedido.productos,
+            total: pedido.total,
+            observaciones: pedido.observaciones || ""
+        };
+        
+        // Agregar al inicio del array
+        pedidosExistentes.unshift(nuevoPedido);
+        
+        // Guardar en localStorage
+        localStorage.setItem("benditoCafePedidos", JSON.stringify(pedidosExistentes));
+        
+        console.log("✅ Pedido guardado en visor:", nuevoPedido.id);
+        
+    } catch (error) {
+        console.error("❌ Error al guardar pedido en visor:", error);
+    }
+}

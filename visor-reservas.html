@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visor de Reservas - Bendito Café</title>
+    <link rel="stylesheet" href="/CSS/visorpedidos.css">
+</head>
+<body>
+    <!-- Header con navegación -->
+    <header class="header-visor">
+        <div class="contenedor-nav">
+            <div class="logo-section">
+                <img src="/imagenes/Logo1.png" alt="Bendito Café" class="logo-visor">
+                <h1>📅 Visor de Reservas</h1>
+            </div>
+            <nav class="nav-visor">
+                <a href="index.html" class="btn-nav">🏠 Inicio</a>
+                <a href="index2.html" class="btn-nav">🛒 Productos</a>
+                <a href="visor-pedidos.html" class="btn-nav">📋 Pedidos</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="main-visor">
+        <!-- Panel de estadísticas -->
+        <section class="estadisticas">
+            <div class="stat-card">
+                <div class="stat-icon">📅</div>
+                <div class="stat-info">
+                    <h3>Total Reservas</h3>
+                    <span id="totalReservas">0</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">⏳</div>
+                <div class="stat-info">
+                    <h3>Pendientes</h3>
+                    <span id="reservasPendientes">0</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">✅</div>
+                <div class="stat-info">
+                    <h3>Confirmadas</h3>
+                    <span id="reservasConfirmadas">0</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">👥</div>
+                <div class="stat-info">
+                    <h3>Personas Hoy</h3>
+                    <span id="personasHoy">0</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filtros y controles -->
+        <section class="controles">
+            <div class="filtros">
+                <select id="filtroEstado" class="filtro-select">
+                    <option value="todas">Todas las reservas</option>
+                    <option value="pendiente">Pendientes</option>
+                    <option value="confirmada">Confirmadas</option>
+                    <option value="completada">Completadas</option>
+                    <option value="cancelada">Canceladas</option>
+                </select>
+                
+                <input type="date" id="filtroFecha" class="filtro-fecha">
+                
+                <input type="text" id="buscarCliente" placeholder="🔍 Buscar por nombre..." class="filtro-buscar">
+            </div>
+            
+            <div class="acciones">
+                <button id="limpiarReservas" class="btn-accion btn-limpiar">🗑️ Limpiar Todo</button>
+                <button id="exportarReservas" class="btn-accion btn-exportar">📊 Exportar</button>
+            </div>
+        </section>
+
+        <!-- Lista de reservas -->
+        <section class="reservas-container">
+            <div id="listaReservas" class="lista-reservas">
+                <div class="reservas-vacio">
+                    <div class="vacio-icon">📅</div>
+                    <h3>No hay reservas registradas</h3>
+                    <p>Las reservas aparecerán aquí cuando los clientes las realicen</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal para cambiar estado -->
+    <div id="modalEstado" class="modal-estado">
+        <div class="modal-content-estado">
+            <div class="modal-header-estado">
+                <h3>🔄 Cambiar Estado de la Reserva</h3>
+                <button id="cerrarModalEstado" class="cerrar-modal-estado">✕</button>
+            </div>
+            <div class="modal-body-estado">
+                <p>Reserva: <strong id="reservaEstadoInfo"></strong></p>
+                <div class="opciones-estado">
+                    <label class="opcion-estado">
+                        <input type="radio" name="nuevoEstado" value="pendiente">
+                        <span class="estado-visual pendiente">⏳ Pendiente</span>
+                    </label>
+                    <label class="opcion-estado">
+                        <input type="radio" name="nuevoEstado" value="confirmada">
+                        <span class="estado-visual confirmada">✅ Confirmada</span>
+                    </label>
+                    <label class="opcion-estado">
+                        <input type="radio" name="nuevoEstado" value="completada">
+                        <span class="estado-visual completada">🎉 Completada</span>
+                    </label>
+                    <label class="opcion-estado">
+                        <input type="radio" name="nuevoEstado" value="cancelada">
+                        <span class="estado-visual cancelada">❌ Cancelada</span>
+                    </label>
+                </div>
+            </div>
+            <div class="modal-footer-estado">
+                <button id="confirmarEstado" class="btn-confirmar-estado">Actualizar Estado</button>
+                <button id="cancelarEstado" class="btn-cancelar-estado">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/JavaScript/visor-reservas.js"></script>
+</body>
+</html>

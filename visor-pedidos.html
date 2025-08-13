@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visor de Pedidos - Bendito Café</title>
+    <link rel="stylesheet" href="/CSS/visorpedidos.css">
+</head>
+<body>
+    <!-- Header con navegación -->
+    <header class="header-visor">
+        <div class="contenedor-nav">
+            <div class="logo-section">
+                <img src="/imagenes/Logo1.png" alt="Bendito Café" class="logo-visor">
+                <h1>📋 Visor de Pedidos</h1>
+            </div>
+            <nav class="nav-visor">
+                <a href="index.html" class="btn-nav">🏠 Inicio</a>
+                <a href="index2.html" class="btn-nav">🛒 Productos</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="main-visor">
+        <!-- Panel de estadísticas -->
+        <section class="estadisticas">
+            <div class="stat-card">
+                <div class="stat-icon">📦</div>
+                <div class="stat-info">
+                    <h3>Total Pedidos</h3>
+                    <span id="totalPedidos">0</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">⏳</div>
+                <div class="stat-info">
+                    <h3>Pendientes</h3>
+                    <span id="pedidosPendientes">0</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">✅</div>
+                <div class="stat-info">
+                    <h3>Completados</h3>
+                    <span id="pedidosCompletados">0</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">💰</div>
+                <div class="stat-info">
+                    <h3>Total Ventas</h3>
+                    <span id="totalVentas">$0</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filtros y controles -->
+        <section class="controles">
+            <div class="filtros">
+                <select id="filtroEstado" class="filtro-select">
+                    <option value="todos">Todos los estados</option>
+                    <option value="pendiente">Pendientes</option>
+                    <option value="preparando">Preparando</option>
+                    <option value="listo">Listos</option>
+                    <option value="entregado">Entregados</option>
+                    <option value="cancelado">Cancelados</option>
+                </select>
+                
+                <input type="date" id="filtroFecha" class="filtro-fecha">
+                
+                <input type="text" id="buscarCliente" placeholder="🔍 Buscar por nombre..." class="filtro-buscar">
+            </div>
+            
+            <div class="acciones">
+                <button id="limpiarPedidos" class="btn-accion btn-limpiar">🗑️ Limpiar Todo</button>
+                <button id="exportarPedidos" class="btn-accion btn-exportar">📊 Exportar</button>
+            </div>
+        </section>
+
+        <!-- Lista de pedidos -->
+        <section class="pedidos-container">
+            <div id="listaPedidos" class="lista-pedidos">
+                <div class="pedidos-vacio">
+                    <div class="vacio-icon">📋</div>
+                    <h3>No hay pedidos registrados</h3>
+                    <p>Los pedidos aparecerán aquí cuando los clientes realicen compras</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal para ver detalles del pedido -->
+    <div id="modalDetalle" class="modal-detalle">
+        <div class="modal-content-detalle">
+            <div class="modal-header-detalle">
+                <h3>📋 Detalles del Pedido</h3>
+                <button id="cerrarModalDetalle" class="cerrar-modal-detalle">✕</button>
+            </div>
+            <div class="modal-body-detalle">
+                <div id="contenidoDetalle"></div>
+            </div>
+            <div class="modal-footer-detalle">
+                <button id="imprimirPedido" class="btn-imprimir">🖨️ Imprimir</button>
+                <button id="cerrarDetalle" class="btn-cerrar-detalle">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para cambiar estado -->
+    <div id="modalEstado" class="modal-estado">
+        <div class="modal-content-estado">
+            <div class="modal-header-estado">
+                <h3>🔄 Cambiar Estado del Pedido</h3>
+                <button id="cerrarModalEstado" class="cerrar-modal-estado">✕</button>
+            </div>
+            <div class="modal-body-estado">
+                <p>Pedido: <strong id="pedidoEstadoInfo"></strong></p>
+                <div class="opciones-estado">
+                    <label class="opcion-estado">
+                        <input type="radio" name="nuevoEstado" value="pendiente">
+                        <span class="estado-visual pendiente">⏳ Pendiente</span>
+                    </label>
+                    <label class="opcion-estado">
+                        <input type="radio" name="nuevoEstado" value="preparando">
+                        <span class="estado-visual preparando">👨‍🍳 Preparando</span>
+                    </label>
+                    <label class="opcion-estado">
+                        <input type="radio" name="nuevoEstado" value="listo">
+                        <span class="estado-visual listo">✅ Listo</span>
+                    </label>
+                    <label class="opcion-estado">
+                        <input type="radio" name="nuevoEstado" value="entregado">
+                        <span class="estado-visual entregado">📦 Entregado</span>
+                    </label>
+                    <label class="opcion-estado">
+                        <input type="radio" name="nuevoEstado" value="cancelado">
+                        <span class="estado-visual cancelado">❌ Cancelado</span>
+                    </label>
+                </div>
+            </div>
+            <div class="modal-footer-estado">
+                <button id="confirmarEstado" class="btn-confirmar-estado">Actualizar Estado</button>
+                <button id="cancelarEstado" class="btn-cancelar-estado">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/JavaScript/visor_pedidos.js"></script>
+</body>
+</html>

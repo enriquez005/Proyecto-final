@@ -186,7 +186,7 @@ main {
 
 /* ✅ BOTÓN corregido */
 button[type="submit"] {
-    background-color: #6c4f3d;
+    background-color: #6c3d3d;
     color: white;
     padding: 12px 25px;
     border: none;
@@ -403,4 +403,26 @@ input {
     .campo textarea {
         font-size: 16px; /* Evita zoom en móviles */
     }
+}
+
+/* ========== ENLACE AL VISOR DE PEDIDOS ========== */
+.nav-links a[href="visor-pedidos.html"],
+.menu-slide a[href="visor-pedidos.html"] {
+    background: linear-gradient(145deg, #d2691e, #b8541a);
+    color: white !important;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.nav-links a[href="visor-pedidos.html"]:hover {
+    background: linear-gradient(145deg, #b8541a, #a04016);
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(185, 77, 0, 0.4);
+}
+
+.menu-slide a[href="visor-pedidos.html"]:hover {
+    background: linear-gradient(145deg, #b8541a, #a04016);
 }

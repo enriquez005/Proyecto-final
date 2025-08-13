@@ -127,3 +127,25 @@ document.addEventListener("DOMContentLoaded", () => {
         inputFecha.min = hoy;
     }
 });
+
+document.getElementById("reservaForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const reserva = {
+        nombre: document.getElementById("nombre").value,
+        email: document.getElementById("email").value,
+        telefono: document.getElementById("telefono").value,
+        fecha: document.getElementById("fecha").value,
+        hora: document.getElementById("hora").value,
+        personas: document.getElementById("personas").value,
+        comentarios: document.getElementById("comentarios").value,
+        estado: "pendiente"
+    };
+
+    let reservas = JSON.parse(localStorage.getItem("reservas")) || [];
+    reservas.push(reserva);
+    localStorage.setItem("reservas", JSON.stringify(reservas));
+
+    alert("✅ Reserva registrada con éxito");
+    document.getElementById("reservaForm").reset();
+});
